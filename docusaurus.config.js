@@ -32,13 +32,14 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
+        // docs: {
+        //   sidebarPath: require.resolve("./sidebars.js"),
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+        // },
+        docs: false,
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
@@ -63,12 +64,12 @@ const config = {
           src: "img/favicon.svg",
         },
         items: [
-          {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Tutorial",
-          },
+          // {
+          //   type: "doc",
+          //   docId: "intro",
+          //   position: "left",
+          //   label: "Tutorial",
+          // },
           { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://github.com/facebook/docusaurus",
@@ -84,8 +85,16 @@ const config = {
             title: "Docs",
             items: [
               {
+                label: "Get Start",
+                to: "/blog",
+              },
+              {
                 label: "Tutorial",
-                to: "/docs/intro",
+                to: "/blog",
+              },
+              {
+                label: "User Guide",
+                to: "/blog",
               },
             ],
           },
@@ -97,7 +106,7 @@ const config = {
                 href: "https://stackoverflow.com/questions/tagged/docusaurus",
               },
               {
-                label: "Discord",
+                label: "Wechat",
                 href: "https://discordapp.com/invite/docusaurus",
               },
               {
