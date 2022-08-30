@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Pando",
   tagline: "Scaling Web3 dApps with SideChain data infrastructure",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://pando-doc.kencloud.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
