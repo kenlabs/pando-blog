@@ -7,19 +7,24 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: node:latest
+      - image: circleci/node
     steps:
       - checkout
       - run:
-          name: Install Docker
+          name: Install node
           command: |
-            sudo apt-get update
-            sudo apt-get install -y docker.io
+            curl -O https://nodejs.org/dist/v20.9.0/node-v20.9.0-linux-x64.tar.xz
+            tar -xvf node-v20.9.0-linux-x64.tar.xz
+            sudo mv node-v20.9.0-linux-x64 /usr/local/node
+            sudo ln -s /usr/local/node/bin/node /usr/local/bin/node
+            sudo ln -s /usr/local/node/bin/npm /usr/local/bin/npm
+            node --version
+            npm --version
+            sudo npm install -g yarn
+            yarn --version
       - run:
           name: Install dependencies
           command: |
-            curl -o- -L https://yarnpkg.com/install.sh | bash
-            export PATH=$HOME/.yarn/bin:$PATH
             yarn install
             yarn build
       - setup_remote_docker:
