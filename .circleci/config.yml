@@ -7,15 +7,15 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: node:latest
+      - image: cimg/node:latest
     steps:
       - checkout
       - run:
           name: Install dependencies
           command: |
             export NODE_OPTIONS=--openssl-legacy-provider
-            curl -o- -L https://yarnpkg.com/install.sh | bash
-            export PATH=$HOME/.yarn/bin:$PATH
+            node --version
+            yarn --version
             yarn install
             yarn build
       - setup_remote_docker:
