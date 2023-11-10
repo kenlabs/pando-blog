@@ -7,17 +7,15 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: cimg/node:15.0.1
+      - image: circleci/node
     steps:
       - checkout
-      - run:
-          name: Install node yarn
-          command: |
-            npm install yarn
       - run:
           name: Install dependencies
           command: |
             export NODE_OPTIONS=--openssl-legacy-provider
+            curl -o- -L https://yarnpkg.com/install.sh | bash
+            export PATH=$HOME/.yarn/bin:$PATH
             yarn install
             yarn build
       - setup_remote_docker:
