@@ -7,15 +7,20 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: cimg/node:latest
+      - image: node:latest
     steps:
       - checkout
+      - run:
+          name: Install Docker
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y docker.io
       - run:
           name: Install dependencies
           command: |
             export NODE_OPTIONS=--openssl-legacy-provider
-            node --version
-            yarn --version
+            curl -o- -L https://yarnpkg.com/install.sh | bash
+            export PATH=$HOME/.yarn/bin:$PATH
             yarn install
             yarn build
       - setup_remote_docker:
