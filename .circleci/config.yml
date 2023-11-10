@@ -14,7 +14,7 @@ jobs:
           name: Install dependencies
           command: |
             export NODE_OPTIONS=--openssl-legacy-provider
-            npm install -g yarn
+            sudo npm install -g yarn
             yarn install
             yarn build
       - setup_remote_docker:
