@@ -1,0 +1,78 @@
+{
+  "main": [
+    {
+      "type": "category",
+      "label": "Rationale of data versioning",
+      "items": [
+        {
+          "type": "doc",
+          "label": "(Web2)MLOps",
+          "id": "rationale-of-data-versioning/web2-MLOps"
+        },
+        {
+          "type": "doc",
+          "label": "(Web3)Data NFTs & Data DAOs",
+          "id": "rationale-of-data-versioning/web3-data-NFTs-data-DAOs"
+        },
+        {
+          "type": "doc",
+          "label": "Link unique NFT to an AI/ML model",
+          "id": "rationale-of-data-versioning/link-unique-nft-to-an-ai-ml-model"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Pando",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Why MLOps?",
+          "id": "pando/why-mlops"
+        },
+        {
+          "type": "doc",
+          "label": "Features",
+          "id": "pando/features"
+        },
+        {
+          "type": "doc",
+          "label": "Use Cases",
+          "id": "pando/use-cases"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "jiaoziFS",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Features",
+          "id": "jiaozifs/features"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "jiaoziDB",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Why schema?",
+          "id": "jiaozidb/why-schema"
+        },
+        {
+          "type": "doc",
+          "label": "Features",
+          "id": "jiaozidb/features"
+        },
+        {
+          "type": "doc",
+          "label": "Customers",
+          "id": "jiaozidb/customers"
+        }
+      ]
+    }
+  ]
+}

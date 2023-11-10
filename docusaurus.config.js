@@ -1,132 +1,148 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const autoImportTabs = require('./src/remark/auto-import-tabs')
+const fileExtSwitcher = require('./src/remark/file-ext-switcher')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Pando",
-  tagline: "Scaling Web3 dApps with SideChain data infrastructure",
-  url: "https://pando-doc.kencloud.com",
-  baseUrl: "/",
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.svg",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+  customFields: {
+    defaultDocsLandingPage: 'rationale-of-data-versioning/web2-MLOps', // redirects here when hitting /docs/
+    defaultSectionLandingPages: {
+      // map of what is considered the first article in each section
+      // section: id
+      tutorial: 'forward',
+    },
   },
-
+  // ?
+  title: 'Pando Docs',
+  // ?
+  tagline:
+    'Learn Pando',
+  // ?
+  url: 'https://redwoodjs.com',
+  baseUrl: '/',
+  onBrokenLinks: 'ignore',
+  onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/favicon.svg',
+  organizationName: 'Kenlabs', // Usually your GitHub org/user name.
+  // ?
+  projectName: 'Pando', // Usually your repo name.,
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      algolia: {
+        appId: '37B3LHULK0',
+        apiKey: '1d7f2f299d9a38c157501c301425f090',
+        indexName: 'learn-pando',
+        contextualSearch: true,
+        searchParameters: {},
+        externalUrlRegex: 'https://learn-redwood.netlify.app',
+      },
+      navbar: {
+        title: 'Pando',
+        logo: {
+          alt: 'Pando logo',
+          src: 'img/favicon.svg',
+          href: '#',
+          target: '_self',
+        },
+        items: [
+          {
+            type: 'docsVersionDropdown',
+            position: 'left',
+          },
+          {
+            href: 'https://github.com/pando-project',
+            position: 'right',
+            className: 'github-logo',
+            'aria-label': 'GitHub repository',
+          },
+        ],
+      },
+      prism: {
+        additionalLanguages: ['toml'],
+      },
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Docs',
+            items: [
+              {
+                label: 'Tutorial',
+                to: 'docs/tutorial/foreword',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Discord',
+                href: 'https://discord.com/invite/redwoodjs',
+              },
+              {
+                label: 'Discourse',
+                href: 'https://community.redwoodjs.com/',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/redwoodjs',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'redwoodjs.com',
+                to: 'https://redwoodjs.com/',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/pando-project',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} RedwoodJS. Built with Docusaurus.`,
+      },
+    }),
   presets: [
     [
-      "classic",
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          sidebarPath: require.resolve('./sidebars.js'),
+          // ? — blob? tree?
+          editUrl: 'https://github.com/redwoodjs/redwood/blob/main/docs', // base path for repo edit pages
+          editCurrentVersion: true,
+          remarkPlugins: [autoImportTabs, fileExtSwitcher],
+          versions: {
+            current: {
+              label: 'Canary',
+              path: 'canary',
+              banner: 'unreleased',
+            },
+          },
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
   ],
+  // ?
+  scripts: [
+    {
+      src: 'https://plausible.io/js/plausible.js',
+      defer: true,
+      'data-domain': 'redwoodjs.com',
+    },
+  ],
+  stylesheets: [
+    'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap',
+    'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&display=swap',
+  ],
+}
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: "Pando",
-        logo: {
-          alt: "Pando Logo",
-          src: "img/favicon.svg",
-        },
-        items: [
-          {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Docs",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
-          },
-        ],
-      },
-      footer: {
-        style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Docs",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Pando, Inc. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
-};
-
-module.exports = config;
+module.exports = config
