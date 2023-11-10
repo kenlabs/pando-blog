@@ -13,6 +13,10 @@ jobs:
       - run:
           name: Install node
           command: |
+            sudo apt remove nodejs npm
+            sudo rm -rf /usr/local/lib/node*
+            sudo rm -rf /usr/local/include/node*
+            sudo rm -rf /usr/local/bin/node*
             curl -O https://nodejs.org/dist/v20.9.0/node-v20.9.0-linux-x64.tar.xz
             tar -xvf node-v20.9.0-linux-x64.tar.xz
             sudo mv node-v20.9.0-linux-x64 /usr/local/node
