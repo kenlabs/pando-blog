@@ -2,75 +2,123 @@
   "main": [
     {
       "type": "category",
-      "label": "Rationale of data versioning",
+      "label": "INTRODUCTION",
       "items": [
         {
           "type": "doc",
-          "label": "(Web2)MLOps",
-          "id": "rationale-of-data-versioning/web2-MLOps"
+          "label": "What Is Dolt?",
+          "id": "introduction/what-is-pando"
         },
         {
           "type": "doc",
-          "label": "(Web3)Data NFTs & Data DAOs",
-          "id": "rationale-of-data-versioning/web3-data-NFTs-data-DAOs"
+          "label": "Installation",
+          "id": "introduction/installation"
         },
         {
           "type": "doc",
-          "label": "Link unique NFT to an AI/ML model",
-          "id": "rationale-of-data-versioning/link-unique-nft-to-an-ai-ml-model"
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "label": "Pando",
-      "items": [
-        {
-          "type": "doc",
-          "label": "Why MLOps?",
-          "id": "pando/why-mlops"
-        },
-        {
-          "type": "doc",
-          "label": "Features",
-          "id": "pando/features"
+          "label": "Getting Started",
+          "id": "introduction/getting-started"
         },
         {
           "type": "doc",
           "label": "Use Cases",
-          "id": "pando/use-cases"
+          "id": "introduction/use-cases"
         }
       ]
     },
     {
       "type": "category",
-      "label": "jiaoziFS",
+      "label": "CONCEPTS",
       "items": [
         {
           "type": "doc",
-          "label": "Features",
-          "id": "jiaozifs/features"
+          "label": "Version Control",
+          "id": "concepts/version-control"
+        },
+        {
+          "type": "doc",
+          "label": "Data Hub",
+          "id": "concepts/data-hub"
         }
       ]
     },
     {
       "type": "category",
-      "label": "jiaoziDB",
+      "label": "PRODUCTS",
       "items": [
         {
           "type": "doc",
-          "label": "Why schema?",
-          "id": "jiaozidb/why-schema"
+          "label": "Pando",
+          "id": "products/pando"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "CLI REFERENCE",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Commands",
+          "id": "cli-reference/commands"
         },
         {
           "type": "doc",
-          "label": "Features",
-          "id": "jiaozidb/features"
+          "label": "Git Comparison",
+          "id": "cli-reference/git-comparison"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "ARCHITECTURE",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Overview",
+          "id": "architecture/overview"
         },
         {
           "type": "doc",
-          "label": "Customers",
-          "id": "jiaozidb/customers"
+          "label": "Storage Engine",
+          "id": "architecture/storage-engine"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "GUIDES",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Contributing",
+          "id": "guides/contribute"
+        },
+        {
+          "type": "doc",
+          "label": "Storage Engine",
+          "id": "guides/importing-data"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "OTHER",
+      "items": [
+        {
+          "type": "doc",
+          "label": "FAQ",
+          "id": "other/faq"
+        },
+        {
+          "type": "doc",
+          "label": "Roadmap",
+          "id": "other/roadmap"
+        },
+        {
+          "type": "doc",
+          "label": "Versioning",
+          "id": "other/versioning"
         }
       ]
     }
