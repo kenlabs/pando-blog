@@ -7,9 +7,13 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: cimg/node:15.0.1
+      - image: cimg/node
     steps:
       - checkout
+      - run:
+          name: Install node yarn
+          command: |
+            npm install -g yarn
       - run:
           name: Install dependencies
           command: |
