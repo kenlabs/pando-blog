@@ -4,7 +4,7 @@ const fileExtSwitcher = require('./src/remark/file-ext-switcher')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   customFields: {
-    defaultDocsLandingPage: 'rationale-of-data-versioning/web2-MLOps', // redirects here when hitting /docs/
+    defaultDocsLandingPage: 'introduction/what-is-pando', // redirects here when hitting /docs/
     defaultSectionLandingPages: {
       // map of what is considered the first article in each section
       // section: id
